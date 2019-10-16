@@ -115,7 +115,7 @@ function pipeTakeaway() {
 
 }
 
-function yeetTheBarrel() {
+function barrelYeet9000() {
     let mtrs = motors.largeAD
     let tool = motors.mediumB
 
