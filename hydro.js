@@ -114,6 +114,12 @@ function pipeTakeaway() {
     pauseUntil(() => sensors.ultrasonic1.distance() < 5)
 
 }
+
+function yeetTheBarrel() {
+    let mtrs = motors.largeAD
+    let tool = motors.mediumB
+
+}
 brick.buttonDown.onEvent(ButtonEvent.Pressed, function () {
     if (currentOption == 1) {
         if (inMenu == true) {
