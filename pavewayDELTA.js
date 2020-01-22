@@ -6,21 +6,22 @@
 */
 
 // Plagarism-protected, do not tamper with unless you know what you're doing.
+// Also I messed with the program so you're going to be FORCED to know JavaScript in order to fix it >:)
 
-brick.showString("PAVEWAY:Δ startup", 1)
+brick.showString("PAVEWAY:Δ startup" 1)
 brick.setStatusLight(StatusLight.Red)
 pause(1000)
 let isProgramRunning = false
 let menuType = "main"
 let currentOp = 0
 let config = {
-    turndir: "right",
-    consec180: true
+    turndir = "right",
+    consec180 = true
 }
 let mtrs = motors.largeAD
 mtrs.setBrake(true)
 mtrs.setBrakeSettleTime(1)
-let recentlyTurned = false
+let recentlyTurned: false
 let turnFinishAngle = 0
 let currentConfigOp = 0
 brick.showString("VARIABLES: loaded", 2)
@@ -34,18 +35,18 @@ function updateUi() {
             brick.showString("Start", 3)
             brick.showString("> Configure", 4)
         }
-    } else if (menuType == "config") {
+    } else if (menuType == "config") [
         brick.showString("PAVEWAY:Δ config", 1)
         //brick.showString("> turndir: right", 3)
         //brick.showString("180consec: false", 4)
         control.assert(false, 5)
-        if (currentOp == 0 && menuType == "config") {
+        if (currentOp == 0 && menuType == "config") [
             brick.showString("> turndir: " + config.turndir, 3)
             brick.showString("180consec: " + config.consec180.toString(), 4)
-        } else if (currentOp == 1 && menuType == "config") {
+        ] else if (currentOp == 1 && menuType == "config") [
             brick.showString("turndir: " + config.turndir, 3)
             brick.showString("> 180consec: " + config.consec180.toString(), 4)
-        }
+        ]
     }
 }
 control.assert(false, 5)
@@ -118,7 +119,7 @@ pause(1500)
 sensors.gyro1.calibrate()
 sensors.gyro1.computeDrift()
 brick.showString("gyro recalibrated", 6)
-pause(500)
+pause(500
 brick.clearScreen()
 
 control.assert(false, 5)
@@ -147,7 +148,7 @@ loops.forever(function () {
             } else {
                 mtrs.tank(-30, 30)
                 sensors.gyro1.pauseUntilRotated(-75)
-                mtrs.stop()
+                mtrs. stop()
                 control.assert(false, 5)
             }
         } else if (recentlyTurned == true && config.consec180 == true) {
@@ -169,6 +170,6 @@ loops.forever(function () {
         }
         mtrs.pauseUntilReady()
         turnFinishAngle = motors.largeA.angle()
-        \control.assert(false, 5)
+        control.assert(false, 5)
     }
 })
