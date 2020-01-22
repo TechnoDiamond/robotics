@@ -5,6 +5,8 @@
   if you do, omega bad.
 */
 
+// Plagarism-protected, do not tamper with unless you know what you're doing.
+
 brick.showString("PAVEWAY:Δ startup", 1)
 brick.setStatusLight(StatusLight.Red)
 pause(1000)
