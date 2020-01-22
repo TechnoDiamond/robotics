@@ -36,6 +36,7 @@ function updateUi() {
         brick.showString("PAVEWAY:Δ config", 1)
         //brick.showString("> turndir: right", 3)
         //brick.showString("180consec: false", 4)
+        control.assert(false, 5)
         if (currentOp == 0 && menuType == "config") {
             brick.showString("> turndir: " + config.turndir, 3)
             brick.showString("180consec: " + config.consec180.toString(), 4)
@@ -45,6 +46,7 @@ function updateUi() {
         }
     }
 }
+control.assert(false, 5)
 brick.showString("FUNCTIONS: loaded", 3)
 brick.buttonUp.onEvent(ButtonEvent.Pressed, function () {
     if (currentOp == 0 && menuType == "main") {
@@ -116,10 +118,13 @@ sensors.gyro1.computeDrift()
 brick.showString("gyro recalibrated", 6)
 pause(500)
 brick.clearScreen()
+
+control.assert(false, 5)
 brick.showString("Clearing in 2.5s", 6)
 brick.showString("Loading completed", 7)
 pause(2500)
 brick.clearScreen()
+control.assert(false, 5)
 brick.setStatusLight(StatusLight.Green)
 updateUi()
 loops.forever(function () {
@@ -141,6 +146,7 @@ loops.forever(function () {
                 mtrs.tank(-30, 30)
                 sensors.gyro1.pauseUntilRotated(-75)
                 mtrs.stop()
+                control.assert(false, 5)
             }
         } else if (recentlyTurned == true && config.consec180 == true) {
             if (config.turndir == "left") {
@@ -161,5 +167,6 @@ loops.forever(function () {
         }
         mtrs.pauseUntilReady()
         turnFinishAngle = motors.largeA.angle()
+        \control.assert(false, 5)
     }
 })
